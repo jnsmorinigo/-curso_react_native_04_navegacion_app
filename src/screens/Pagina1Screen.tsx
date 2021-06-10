@@ -2,7 +2,8 @@ import React, { useEffect } from 'react'
 // import { StackScreenProps } from '@react-navigation/stack'
 import { Button, Text, View, TouchableOpacity } from 'react-native'
 import { DrawerScreenProps } from '@react-navigation/drawer';
-import { styles } from '../theme/AppTheme';
+import { styles, colores } from '../theme/AppTheme';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 // interface Props extends StackScreenProps<any, any> { };
 interface Props extends DrawerScreenProps<any, any> { };
@@ -12,12 +13,18 @@ export const Pagina1Screen = ({ navigation }: Props) => {
     useEffect(() => {
         navigation.setOptions({
             headerLeft: () => (
-                <Button
-                    title="Menú"
+                <TouchableOpacity
+                    style={{
+                        marginLeft: 10
+                    }}
                     onPress={() => navigation.toggleDrawer()}
                 >
-
-                </Button >
+                    <Icon
+                        name="menu-outline"
+                        color={colores.primary}
+                        size={35}
+                    />
+                </TouchableOpacity>
             )
         });
     }, [])
@@ -49,6 +56,11 @@ export const Pagina1Screen = ({ navigation }: Props) => {
                         nombre: 'Pedro'
                     })}
                 >
+                    <Icon
+                        name="person-outline"
+                        color={colores.primary}
+                        size={35}
+                    />
                     <Text
                         style={styles.botonGrandeTexto}
                     >Pedro</Text>
@@ -63,6 +75,10 @@ export const Pagina1Screen = ({ navigation }: Props) => {
                         nombre: 'Jonas'
                     })}
                 >
+                    <Icon
+                        name="person-outline"
+                        size={35}
+                    />
                     <Text
                         style={styles.botonGrandeTexto}
                     >Jonas</Text>

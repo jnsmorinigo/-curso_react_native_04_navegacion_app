@@ -1,5 +1,9 @@
 import { StyleSheet } from "react-native";
 
+export const colores = {
+    primary: '#5856D6'
+}
+
 export const styles = StyleSheet.create({
     globalMargin: {
         marginHorizontal: 20
@@ -33,7 +37,8 @@ export const styles = StyleSheet.create({
     },
     menuContainer: {
         marginVertical: 40,
-        alignItems: 'center'
+        marginHorizontal: 40,
+        // alignItems: ''
     },
     menuBoton: {
         marginVertical: 10
