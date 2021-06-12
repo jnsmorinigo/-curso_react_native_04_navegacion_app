@@ -7,10 +7,10 @@ export const Tabs2Screen = () => {
         console.log("tabs2screen effect");
     }, []);
 
-
     return (
         <View>
             <Text>Tabs2 screen</Text>
+
         </View>
     )
 }

@@ -1,38 +1,43 @@
 import React, { useEffect } from 'react'
 
-import Icon from 'react-native-vector-icons/Ionicons';
-
-import { View, Text } from 'react-native';
+import { Text, View } from 'react-native'
 import { styles, colores } from '../theme/AppTheme';
-
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { TouchableIcon } from '../components/TouchableIcon';
 
 
 export const Tabs1Screen = () => {
 
-    useEffect(() => {
-        console.log("tabs1screen effect");
-    }, []);
+    const { top } = useSafeAreaInsets();
 
+    useEffect(() => {
+        console.log('Tab1Screen effect');
+    }, [])
 
     return (
-        <View style={styles.globalMargin}>
-            <Text style={styles.title}>Iconos</Text>
+        <View style={{
+            ...styles.globalMargin,
+            marginTop: top + 10
+        }}
+        >
+            <Text style={styles.title}> Iconos </Text>
+
             <Text>
-                <Icon name="airplane-outline" size={80} color={colores.primary} />;
-                <Icon name="arrow-undo-outline" size={80} color={colores.primary} />;
-                <Icon name="battery-half-outline" size={80} color={colores.primary} />;
-                <Icon name="cloudy-night-outline" size={80} color={colores.primary} />;
-                <Icon name="fitness-outline" size={80} color={colores.primary} />;
-                <Icon name="game-controller-outline" size={80} color={colores.primary} />;
-                <Icon name="play-skip-forward-outline" size={80} color={colores.primary} />;
-                <Icon name="shield-half-outline" size={80} color={colores.primary} />;
-                <Icon name="thumbs-up-outline" size={80} color={colores.primary} />;
-                <Icon name="logo-facebook" size={80} color={colores.primary} />;
-                <Icon name="logo-octocat" size={80} color={colores.primary} />;
-                <Icon name="logo-github" size={80} color={colores.primary} />;
-                <Icon name="logo-react" size={80} color={colores.primary} />;
-                <Icon name="logo-twitter" size={80} color={colores.primary} />;
-                <Icon name="logo-twitch" size={80} color={colores.primary} />;
+                <TouchableIcon iconName="airplane-outline" />
+                <TouchableIcon iconName="arrow-undo-outline" />
+                <TouchableIcon iconName="battery-half-outline" />
+                <TouchableIcon iconName="cloudy-night-outline" />
+                <TouchableIcon iconName="fitness-outline" />
+                <TouchableIcon iconName="game-controller-outline" />
+                <TouchableIcon iconName="play-skip-forward-outline" />
+                <TouchableIcon iconName="shield-outline" />
+                <TouchableIcon iconName="thumbs-up-outline" />
+                <TouchableIcon iconName="logo-facebook" />
+                <TouchableIcon iconName="logo-octocat" />
+                <TouchableIcon iconName="logo-github" />
+                <TouchableIcon iconName="logo-react" />
+                <TouchableIcon iconName="logo-twitter" />
+                <TouchableIcon iconName="logo-twitch" />
             </Text>
 
         </View>
